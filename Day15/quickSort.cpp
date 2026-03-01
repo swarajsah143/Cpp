@@ -14,13 +14,13 @@ int partition(vector<int>& nums,int st,int end){
     }
     idx++;
     swap(nums[end],nums[idx]);
-    return idx+1;
+    return idx;
 }
 
 void quickSort(vector<int>& nums,int st,int end){
 
     if(st<end){ //Base Case is when st==end
-        int pivot=partition(nums,0,nums.size()-1);
+        int pivot=partition(nums,st,end);
 
         quickSort(nums,st,pivot-1);
         quickSort(nums,pivot+1,end);
